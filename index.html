@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Face Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        #face-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        #funny-face {
+            font-size: 48px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funny Face Generator</h1>
+    <div id="face-container">
+        <p id="funny-face">😄</p>
+        <button id="generate-face">Generate Funny Face</button>
+    </div>
+
+    <script>
+        const funnyFaces = [
+            "😄", "😆", "😂", "😅", "😋", "😜", "😎", "😇", "😉", "😁", "😀"
+        ];
+
+        const faceContainer = document.getElementById("face-container");
+        const funnyFace = document.getElementById("funny-face");
+        const generateFaceButton = document.getElementById("generate-face");
+
+        generateFaceButton.addEventListener("click", () => {
+            const randomIndex = Math.floor(Math.random() * funnyFaces.length);
+            funnyFace.textContent = funnyFaces[randomIndex];
+        });
+    </script>
+</body>
+</html>
